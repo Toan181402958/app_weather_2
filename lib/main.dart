@@ -7,7 +7,7 @@ import 'package:app_weather_2/contains.dart';
 import 'package:intl/intl.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
             return Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: data?.status == 'Sun' ? AssetImage('images/clouds.png', ) : AssetImage('images/sun.png'),
+                  image: data?.status == 'Sun' ? const AssetImage('images/clouds.png', ) : const AssetImage('images/sun.png'),
                   fit: BoxFit.cover,
                 )
               ),
@@ -126,7 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 60, 0, 0),
-                  child: WeatherInformation('${data?.temp}', dayNow, '${data?.tempMax}', '${data?.tempMin}',
+                  child: weatherInformation('${data?.temp}', dayNow, '${data?.tempMax}', '${data?.tempMin}',
                       'https://openweathermap.org/img/wn/${data?.image}@2x.png'),
                 ),
                 ElevatedButton.icon(
